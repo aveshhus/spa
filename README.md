@@ -15,6 +15,10 @@ Set `NEXT_PUBLIC_SITE_URL` to the deployed HTTPS origin before building. This va
 
 Build with `npm run build` and start with `npm run start`.
 
+## GitHub Pages
+
+Pushing to `main` runs the `Deploy spa website to GitHub Pages` workflow. The workflow prepares and exports the spa home and contact pages as a static site. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. The project site URL will be `https://aveshhus.github.io/spa/` after the first successful workflow deployment.
+
 ## Contact details
 
 - Pearl Royal Spa, Anand Nagar, near Anand Plaza, University Road, Udaipur, Rajasthan 313001

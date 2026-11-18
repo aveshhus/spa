@@ -2,6 +2,7 @@ node_modules/
 .next/
 .tmp/
 .vercel/
+.github-pages-source/
 out/
 coverage/
 *.tsbuildinfo

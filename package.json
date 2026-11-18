@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "pages:prepare": "node scripts/prepare-github-pages.mjs",
     "start": "next start",
     "lint": "next lint",
     "studio": "sanity dev"
