@@ -1,0 +1,2 @@
+import {defineType,defineField} from 'sanity';
+export const testimonial=defineType({name:'testimonial',title:'Testimonials',type:'document',fields:[defineField({name:'client',type:'string',validation:r=>r.required()}),defineField({name:'quote',type:'text',rows:5,validation:r=>r.required()}),defineField({name:'eventType',type:'string'}),defineField({name:'photo',type:'image',options:{hotspot:true}}),defineField({name:'published',type:'boolean',initialValue:false}),defineField({name:'order',type:'number'})]});

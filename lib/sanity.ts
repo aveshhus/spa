@@ -1,0 +1,9 @@
+import {createClient} from 'next-sanity';
+export const projectId=process.env.NEXT_PUBLIC_SANITY_PROJECT_ID||'';
+export const dataset=process.env.NEXT_PUBLIC_SANITY_DATASET||'production';
+export const client=projectId?createClient({projectId,dataset,apiVersion:process.env.NEXT_PUBLIC_SANITY_API_VERSION||'2026-01-01',useCdn:true}):null;
+export async function getProjects(){if(!client)return null;try{return await client.fetch(`*[_type == "project" && published == true]|order(order asc){_id,title,category,location,description,"slug":slug.current,videoUrl,featured,"src":cover.asset->url,"imageUrls":images[].asset->url}`)}catch{return null}}
+export async function getJournal(){if(!client)return null;try{return await client.fetch(`*[_type == "post" && defined(publishedAt)]|order(publishedAt desc){_id,title,category,excerpt,publishedAt,"slug":slug.current,"src":cover.asset->url,body}`)}catch{return null}}
+export async function getPost(slug:string){if(!client)return null;try{return await client.fetch(`*[_type == "post" && slug.current == $slug && defined(publishedAt)][0]{title,category,excerpt,publishedAt,"src":cover.asset->url,body}`,{slug})}catch{return null}}
+export async function getSettings(){if(!client)return null;try{return await client.fetch(`*[_type == "siteSettings"][0]{businessName,heroHeadline,heroDescription,"heroImageUrl":heroImage.asset->url,heroSlides[]{label,videoUrl,"src":image.asset->url},services[]{name,description,category,"slug":slug.current,"src":image.asset->url,visible},email,phone,whatsapp,address,instagram,youtube,seoTitle,seoDescription}`)}catch{return null}}
+export async function getTestimonials(){if(!client)return null;try{return await client.fetch(`*[_type == "testimonial" && published == true]|order(order asc){client,quote,eventType,"src":photo.asset->url}`)}catch{return null}}

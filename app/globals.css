@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+@import './pearl.css';
+
+:root{--jade:#12201d;--champagne:#bfa27a;--linen:#f4efe6;--stone:#d8cdbb;--moss:#55655b;--bronze:#7a6039;--ink:#1e2d28;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',Arial,sans-serif;--line:rgba(18,32,29,.2)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--linen);color:var(--jade);font-family:var(--sans);font-size:15px;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{color:inherit}a,button{-webkit-tap-highlight-color:transparent}::selection{background:var(--champagne);color:var(--jade)}img,svg{max-width:100%}

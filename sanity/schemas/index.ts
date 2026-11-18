@@ -1,0 +1,1 @@
+import {project} from './project';import {post} from './post';import {testimonial} from './testimonial';import {siteSettings} from './siteSettings';export const schemaTypes=[project,post,testimonial,siteSettings];

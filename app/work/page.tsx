@@ -1,0 +1,3 @@
+import type {Metadata} from 'next';import {WorkGrid} from '@/components/work-grid';import {getProjects} from '@/lib/sanity';import {projects} from '@/lib/content';
+export const metadata:Metadata={title:'Selected Work',description:'A multidisciplinary portfolio of weddings, events, automotive, products, fashion, portraits and brand campaigns.'};
+export default async function Work(){const cms=await getProjects();return <main className="work-page"><div className="wrap page-hero"><div className="eyebrow">Maison Frames · Selected work · {cms?.length??projects.length} projects</div><h1>Different briefs.<br/><i>One eye.</i></h1><p>Browse a selection of visual stories across celebrations, culture, people, products and brands.</p><WorkGrid source={cms||undefined}/></div></main>}
