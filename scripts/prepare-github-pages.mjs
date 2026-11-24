@@ -6,8 +6,9 @@ const target=join(root,'.github-pages-source');
 await rm(target,{recursive:true,force:true});
 await mkdir(join(target,'app','contact'),{recursive:true});
 await mkdir(join(target,'public'),{recursive:true});
+await cp(join(root,'public','media'),join(target,'public','media'),{recursive:true});
 
-for(const file of ['page.tsx','layout.tsx','globals.css','pearl.css','icon.svg']){
+for(const file of ['page.tsx','layout.tsx','globals.css','pearl.css','icon.svg','robots.ts','sitemap.ts']){
   const from=file==='icon.svg'?join(root,'app',file):join(root,'app',file);
   const to=file==='icon.svg'?join(target,'app',file):join(target,'app',file);
   await cp(from,to);
